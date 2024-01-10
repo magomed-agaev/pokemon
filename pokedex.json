@@ -1,0 +1,173 @@
+{
+    "pokedex": [
+      {
+        "id": 1,
+        "nom": "germignon",
+        "types": ["Plante"],
+        "pv": 45,
+        "atk": 49,
+        "def": 65,
+        "exp": 64,
+        "attaques": [
+          {"nom": "Tranch'Herbe", "puissance": 40},
+          {"nom": "Fouet Lianes", "puissance": 50}
+        ]
+      },
+      {
+        "id": 2,
+        "nom": "macronium",
+        "types": ["Plante"],
+        "pv": 60,
+        "atk": 62,
+        "def": 80,
+        "exp": 141,
+        "attaques": [
+          {"nom": "Tranch'Herbe", "puissance": 40},
+          {"nom": "Fouet Lianes", "puissance": 50}
+        ]
+      },
+      {
+        "id": 3,
+        "nom": "meganium",
+        "types": ["Plante"],
+        "pv": 100,
+        "atk": 70,
+        "def": 100,
+        "exp": 208,
+        "attaques": [
+          {"nom": "Tranch'Herbe", "puissance": 40},
+          {"nom": "Fouet Lianes", "puissance": 50}
+        ]
+      },
+      {
+        "id": 4,
+        "nom": "héricendre",
+        "types": ["Feu"],
+        "pv": 39,
+        "atk": 52,
+        "def": 43,
+        "exp": 65,
+        "attaques": [
+          {"nom": "Flammèche", "puissance": 40},
+          {"nom": "Lance Flamme", "puissance": 50}
+        ]
+      },
+      {
+        "id": 5,
+        "nom": "feurisson",
+        "types": ["Feu"],
+        "pv": 58,
+        "atk": 64,
+        "def": 58,
+        "exp": 142,
+        "attaques": [
+          {"nom": "Flammèche", "puissance": 40},
+          {"nom": "Lance Flamme", "puissance": 50}
+        ]
+      },
+      {
+        "id": 6,
+        "nom": "typhlosion",
+        "types": ["Feu"],
+        "pv": 78,
+        "atk": 100,
+        "def": 78,
+        "exp": 209,
+        "attaques": [
+          {"nom": "Flammèche", "puissance": 40},
+          {"nom": "Lance Flamme", "puissance": 50}
+        ]
+      },
+      {
+        "id": 7,
+        "nom": "kaiminus",
+        "types": ["Eau"],
+        "pv": 65,
+        "atk": 65,
+        "def": 64,
+        "exp": 66,
+        "attaques": [
+          {"nom": "Pistolet a Eau", "puissance": 40},
+          {"nom": "Hydrocanon ", "puissance": 50}
+        ]
+      },
+      {
+        "id": 8,
+        "nom": "crocodil",
+        "types": ["Eau"],
+        "pv": 65,
+        "atk": 80,
+        "def": 80,
+        "exp": 143,
+        "attaques": [
+          {"nom": "Pistolet a Eau", "puissance": 40},
+          {"nom": "Hydrocanon ", "puissance": 50}
+        ]
+      },
+      {
+        "id": 9,
+        "nom": "aligatueur",
+        "types": ["Eau"],
+        "pv": 85,
+        "atk": 105,
+        "def": 100,
+        "exp": 210,
+        "attaques": [
+          {"nom": "Pistolet a Eau", "puissance": 40},
+          {"nom": "Hydrocanon ", "puissance": 50}
+        ]
+      },
+      {
+        "id": 10,
+        "nom": "polichombr",
+        "types": ["Spectre"],
+        "pv": 44,
+        "atk": 75,
+        "def": 35,
+        "exp": 97,
+        "attaques": [
+          {"nom": "Balle Ombre", "puissance": 40},
+          {"nom": "Griffe Ombre", "puissance": 50}
+        ]
+      },
+      {
+        "id": 11,
+        "nom": "branette",
+        "types": ["Spectre"],
+        "pv": 64,
+        "atk": 115,
+        "def": 65,
+        "exp": 179,
+        "attaques": [
+          {"nom": "Balle Ombre", "puissance": 60},
+          {"nom": "Griffe Ombre", "puissance": 70}
+        ]
+      },
+      {
+        "id": 12,
+        "nom": "viskuse",
+        "types": ["Eau", "Spectre"],
+        "pv": 55,
+        "atk": 40,
+        "def": 60,
+        "exp": 67,
+        "attaques": [
+          {"nom": "Balle Ombre", "puissance": 60},
+          {"nom": "Pistolet a Eau", "puissance": 40}
+        ]
+      },
+      {
+        "id": 13,
+        "nom": "moyade",
+        "types": ["Eau", "Spectre"],
+        "pv": 100,
+        "atk": 70,
+        "def": 85,
+        "exp": 168,
+        "attaques": [
+          {"nom": "Balle Ombre", "puissance": 60},
+          {"nom": "Pistolet a Eau", "puissance": 40}
+        ]
+      }
+    ]
+  }
