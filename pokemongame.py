@@ -1,13 +1,56 @@
 # import pygame_menu
 # import pygame
 
-
 # pygame.init()
-# surface = pygame.display.set_mode((700, 500))
+# font = pygame.font.Font(None, 36)
+# text_surface = font.render("Welcome to Pokemon Game!",
+#                            True, (255, 255, 255), (0, 0, 0))
+# screen = pygame.display.set_mode((1000, 800))
 
-# menu = pygame_menu.Menu('Welcome', 500, 400,
-#                         theme=pygame_menu.themes.THEME_BLUE)
+# screen.blit(text_surface, (50, 50))
 
+# pygame.display.flip()
+# font = pygame.font.Font('freesansbold.ttf', 32)
+# font.set_bold(True)
+# font.set_italic(True)
+# text_surface.set_alpha(128)
+# new_surface = pygame.transform.scale(text_surface, (300, 70))
+# # rotated_surface = pygame.transform.rotate(text_surface, 45)
+# text_rect = text_surface.get_rect()
+# print(text_rect.width)
+# print(text_rect.height)
+# text_rect.topleft = (50, 50)
+# screen.blit(text_surface, text_rect)
+# text_rect.center = (screen.get_width() / 2, screen.get_height() / 2)
+# screen.blit(text_surface, text_rect)
+# text_surface = font.render("Welcome to Pokemon Game",
+#                            True, (255, 0, 0), (0, 0, 0))
+# # Compteur
+# for i in range(5, -1, -1):
+#     text_surface = font.render(
+#         f"Get Ready! {i}", True, (255, 255, 255), (0, 0, 0))
+#     screen.blit(text_surface, (60, 60))
+#     pygame.display.flip()
+#     pygame.time.wait(1000)
+
+# surface = pygame.display.set_mode((1000, 800))
+
+# menu = pygame_menu.Menu('Pokemon', 1000, 800,
+#                         theme=pygame_menu.themes.THEME_ORANGE)
+
+# surface = pygame.display.set_mode((1000, 800))
+
+# # Create a font object
+# font = pygame.font.SysFont('Arial', 36)
+
+# # Render the text
+# text = font.render('Hello, World!', True, (255, 255, 255))
+
+# # Blit the text to the screen
+# surface.blit(text, (100, 100))
+
+# # Update the display
+# pygame.display.update()
 
 # menu.add.button('Play')
 # menu.add.button('Pokemons')
@@ -16,28 +59,23 @@
 # menu.mainloop(surface)
 
 # pygame.quit()
-
-# import pygame, sys
-# from button import Button
-
-# pygame.init()
-# SCREEN = pygame.display.set_mode((1280, 720))
-# pygame.display.set_caption("Menu")
-# BG = pygame.image.load
 import pygame
 import sys
-from button import Button
+from Button import Button
 
 pygame.init()
+
+# LES DIMENSIONS DE L'ECRAN DU MENU
 
 SCREEN = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Menu")
 
-BG = pygame.image.load("assets/Background.png")
+# AJOUT DU FOND D'ECRAN
+BG = pygame.image.load("Pokemons.jpg")
 
 
 def get_font(size):  # Returns Press-Start-2P in the desired size
-    return pygame.font.Font("assets/font.ttf", size)
+    return pygame.font.Font("PokemonSolid.ttf", size)
 
 
 def play():
@@ -47,12 +85,12 @@ def play():
         SCREEN.fill("black")
 
         PLAY_TEXT = get_font(45).render(
-            "This is the PLAY screen.", True, "White")
+            "This is the PLAY screen.", True, "Yellow")
         PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(PLAY_TEXT, PLAY_RECT)
 
-        PLAY_BACK = Button(image=None, pos=(640, 460),
-                           text_input="BACK", font=get_font(75), base_color="White", hovering_color="Green")
+        PLAY_BACK = Button(image=None, pos=(640, 460), text_input="BACK", font=get_font(
+            75), base_color="White", hovering_color="Green")
 
         PLAY_BACK.changeColor(PLAY_MOUSE_POS)
         PLAY_BACK.update(SCREEN)
@@ -79,8 +117,8 @@ def options():
         OPTIONS_RECT = OPTIONS_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
 
-        OPTIONS_BACK = Button(image=None, pos=(640, 460),
-                              text_input="BACK", font=get_font(75), base_color="Black", hovering_color="Green")
+        OPTIONS_BACK = Button(image=None, pos=(640, 460), text_input="BACK", font=get_font(
+            75), base_color="Black", hovering_color="Green")
 
         OPTIONS_BACK.changeColor(OPTIONS_MOUSE_POS)
         OPTIONS_BACK.update(SCREEN)
@@ -102,15 +140,15 @@ def main_menu():
 
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
-        MENU_TEXT = get_font(100).render("MAIN MENU", True, "#b68f40")
+        MENU_TEXT = get_font(100).render("Pokemon", True, "Yellow")
         MENU_RECT = MENU_TEXT.get_rect(center=(640, 100))
 
-        PLAY_BUTTON = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(640, 250),
-                             text_input="PLAY", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
-        OPTIONS_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(640, 400),
-                                text_input="OPTIONS", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
-        QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(640, 550),
-                             text_input="QUIT", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+        PLAY_BUTTON = Button(image=pygame.image.load("Playrect.png"), pos=(
+            640, 250), text_input="PLAY", font=get_font(75), base_color="Black", hovering_color="Yellow")
+        OPTIONS_BUTTON = Button(image=pygame.image.load("Optionsrect.png"), pos=(
+            640, 400), text_input="POKEMONS", font=get_font(75), base_color="Black", hovering_color="Yellow")
+        QUIT_BUTTON = Button(image=pygame.image.load("Quitrect.png"), pos=(
+            640, 550), text_input="QUIT", font=get_font(75), base_color="Black", hovering_color="Yellow")
 
         SCREEN.blit(MENU_TEXT, MENU_RECT)
 
