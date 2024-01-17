@@ -62,8 +62,13 @@
 import pygame
 import sys
 from Button import Button
+from pygame import mixer
 
 pygame.init()
+
+mixer.init()
+mixer.music.load("musicpoke.mp3")
+mixer.music.play(-1)
 
 # LES DIMENSIONS DE L'ECRAN DU MENU
 
@@ -144,15 +149,17 @@ def main_menu():
         MENU_RECT = MENU_TEXT.get_rect(center=(640, 100))
 
         PLAY_BUTTON = Button(image=pygame.image.load("Playrect.png"), pos=(
-            640, 250), text_input="PLAY", font=get_font(75), base_color="Black", hovering_color="Yellow")
-        OPTIONS_BUTTON = Button(image=pygame.image.load("Optionsrect.png"), pos=(
-            640, 400), text_input="POKEMONS", font=get_font(75), base_color="Black", hovering_color="Yellow")
+            640, 250), text_input="NEW GAME", font=get_font(65), base_color="Black", hovering_color="Yellow")
+        CONTINUE_BUTTON = Button(image=pygame.image.load("Optionsrect.png"), pos=(
+            640, 375), text_input="CONTINUE GAME", font=get_font(65), base_color="Black", hovering_color="Yellow")
+        POKEMONS_BUTTON = Button(image=pygame.image.load("Optionsrect.png"), pos=(
+            640, 500), text_input="POKEMONS", font=get_font(65), base_color="Black", hovering_color="Yellow")
         QUIT_BUTTON = Button(image=pygame.image.load("Quitrect.png"), pos=(
-            640, 550), text_input="QUIT", font=get_font(75), base_color="Black", hovering_color="Yellow")
+            640, 650), text_input="QUIT", font=get_font(65), base_color="Black", hovering_color="Yellow")
 
         SCREEN.blit(MENU_TEXT, MENU_RECT)
 
-        for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
+        for button in [PLAY_BUTTON, CONTINUE_BUTTON, POKEMONS_BUTTON, QUIT_BUTTON]:
             button.changeColor(MENU_MOUSE_POS)
             button.update(SCREEN)
 
@@ -163,7 +170,9 @@ def main_menu():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
                     play()
-                if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
+                if CONTINUE_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    pass
+                if POKEMONS_BUTTON.checkForInput(MENU_MOUSE_POS):
                     options()
                 if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
                     pygame.quit()
