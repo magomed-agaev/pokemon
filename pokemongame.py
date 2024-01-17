@@ -1,83 +1,9 @@
-# import pygame_menu
-# import pygame
-
-# pygame.init()
-# font = pygame.font.Font(None, 36)
-# text_surface = font.render("Welcome to Pokemon Game!",
-#                            True, (255, 255, 255), (0, 0, 0))
-# screen = pygame.display.set_mode((1000, 800))
-
-# screen.blit(text_surface, (50, 50))
-
-# pygame.display.flip()
-# font = pygame.font.Font('freesansbold.ttf', 32)
-# font.set_bold(True)
-# font.set_italic(True)
-# text_surface.set_alpha(128)
-# new_surface = pygame.transform.scale(text_surface, (300, 70))
-# # rotated_surface = pygame.transform.rotate(text_surface, 45)
-# text_rect = text_surface.get_rect()
-# print(text_rect.width)
-# print(text_rect.height)
-# text_rect.topleft = (50, 50)
-# screen.blit(text_surface, text_rect)
-# text_rect.center = (screen.get_width() / 2, screen.get_height() / 2)
-# screen.blit(text_surface, text_rect)
-# text_surface = font.render("Welcome to Pokemon Game",
-#                            True, (255, 0, 0), (0, 0, 0))
-# # Compteur
-# for i in range(5, -1, -1):
-#     text_surface = font.render(
-#         f"Get Ready! {i}", True, (255, 255, 255), (0, 0, 0))
-#     screen.blit(text_surface, (60, 60))
-#     pygame.display.flip()
-#     pygame.time.wait(1000)
-
-# surface = pygame.display.set_mode((1000, 800))
-
-# menu = pygame_menu.Menu('Pokemon', 1000, 800,
-#                         theme=pygame_menu.themes.THEME_ORANGE)
-
-# surface = pygame.display.set_mode((1000, 800))
-
-# # Create a font object
-# font = pygame.font.SysFont('Arial', 36)
-
-# # Render the text
-# text = font.render('Hello, World!', True, (255, 255, 255))
-
-# # Blit the text to the screen
-# surface.blit(text, (100, 100))
-
-# # Update the display
-# pygame.display.update()
-
-# menu.add.button('Play')
-# menu.add.button('Pokemons')
-# menu.add.button('Quit', pygame_menu.events.EXIT)
-
-# menu.mainloop(surface)
-
-# pygame.quit()
 import pygame
 import sys
 from Button import Button
 from pygame import mixer
 
-pygame.init()
-
-mixer.init()
-mixer.music.load("musicpoke.mp3")
-mixer.music.play(-1)
-
-# LES DIMENSIONS DE L'ECRAN DU MENU
-
 SCREEN = pygame.display.set_mode((1280, 720))
-pygame.display.set_caption("Menu")
-
-# AJOUT DU FOND D'ECRAN
-BG = pygame.image.load("Pokemons.jpg")
-
 
 def get_font(size):  # Returns Press-Start-2P in the desired size
     return pygame.font.Font("PokemonSolid.ttf", size)
@@ -140,6 +66,19 @@ def options():
 
 
 def main_menu():
+    pygame.init()
+
+    mixer.init()
+    mixer.music.load("musicpoke.mp3")
+    mixer.music.play(-1)
+
+    # LES DIMENSIONS DE L'ECRAN DU MENU
+    SCREEN = pygame.display.set_mode((1280, 720))
+    pygame.display.set_caption("Menu")
+
+    # AJOUT DU FOND D'ECRAN
+    BG = pygame.image.load("Pokemons.jpg")
+    
     while True:
         SCREEN.blit(BG, (0, 0))
 
@@ -181,4 +120,5 @@ def main_menu():
         pygame.display.update()
 
 
-main_menu()
+if __name__ == "__main__":
+    main_menu()
