@@ -3,7 +3,8 @@ import sys
 from Button import Button
 from pygame import mixer
 
-SCREEN = pygame.display.set_mode((1280, 720))
+SCREEN = pygame.display.set_mode((1200, 700))
+
 
 def get_font(size):  # Returns Press-Start-2P in the desired size
     return pygame.font.Font("PokemonSolid.ttf", size)
@@ -78,7 +79,7 @@ def main_menu():
 
     # AJOUT DU FOND D'ECRAN
     BG = pygame.image.load("Pokemons.jpg")
-    
+
     while True:
         SCREEN.blit(BG, (0, 0))
 
