@@ -1,0 +1,233 @@
+{
+    "pokedex": [
+      {
+        "id": 1,
+        "image": "1.png",
+        "nom": "Germignon",
+        "types": ["Plante"],
+        "pv": 45,
+        "atk": 49,
+        "def": 65,
+        "evolution": {"level": 10, "to": "Macronium"},
+        "level": 5,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "attaques": [
+          {"nom": "Tranch'Herbe", "puissance": 40},
+          {"nom": "Fouet Lianes", "puissance": 50}
+        ]
+      },
+      {
+        "id": 2,
+        "image": "2.png",
+        "nom": "Macronium",
+        "types": ["Plante"],
+        "pv": 60,
+        "atk": 62,
+        "def": 80,
+        "evolution": {"level": 20, "to": "Meganium"},
+        "level": 10,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "attaques": [
+          {"nom": "Tranch'Herbe", "puissance": 40},
+          {"nom": "Fouet Lianes", "puissance": 50}
+        ]
+      },
+      {
+        "id": 3,
+        "image": "3.png",
+        "nom": "Meganium",
+        "types": ["Plante"],
+        "pv": 100,
+        "atk": 70,
+        "def": 100,
+        "level": 20,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "attaques": [
+          {"nom": "Tranch'Herbe", "puissance": 40},
+          {"nom": "Fouet Lianes", "puissance": 50}
+        ]
+      },
+      {
+        "id": 4,
+        "image": "4.png",
+        "nom": "Hericendre",
+        "types": ["Feu"],
+        "pv": 39,
+        "atk": 52,
+        "def": 43,
+        "evolution": {"level": 10, "to": "Feurisson"},
+        "level": 5,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "attaques": [
+          {"nom": "Flammeche", "puissance": 40},
+          {"nom": "Lance Flamme", "puissance": 50}
+        ]
+      },
+      {
+        "id": 5,
+        "image": "5.png",
+        "nom": "Feurisson",
+        "types": ["Feu"],
+        "pv": 58,
+        "atk": 64,
+        "def": 58,
+        "evolution": {"level": 20, "to": "Typhlosion"},
+        "level": 10,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "attaques": [
+          {"nom": "Flammeche", "puissance": 40},
+          {"nom": "Lance Flamme", "puissance": 50}
+        ]
+      },
+      {
+        "id": 6,
+        "image": "6.png",
+        "nom": "Typhlosion",
+        "types": ["Feu"],
+        "pv": 78,
+        "atk": 100,
+        "def": 78,
+        "level": 20,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "attaques": [
+          {"nom": "Flammeche", "puissance": 40},
+          {"nom": "Lance Flamme", "puissance": 50}
+        ]
+      },
+      {
+        "id": 7,
+        "image": "7.png",
+        "nom": "Kaiminus",
+        "types": ["Eau"],
+        "pv": 65,
+        "atk": 65,
+        "def": 64,
+        "level": 5,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "evolution": {"level": 10, "to": "Crocodil"},
+        "attaques": [
+          {"nom": "Pistolet a Eau", "puissance": 40},
+          {"nom": "Hydrocanon ", "puissance": 50}
+        ]
+      },
+      {
+        "id": 8,
+        "image": "8.png",
+        "nom": "Crocodil",
+        "types": ["Eau"],
+        "pv": 65,
+        "atk": 80,
+        "def": 80,
+        "level": 10,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "evolution": {"level": 20, "to": "Aligatueur"},
+        "attaques": [
+          {"nom": "Pistolet a Eau", "puissance": 40},
+          {"nom": "Hydrocanon ", "puissance": 50}
+        ]
+      },
+      {
+        "id": 9,
+        "image": "9.png",
+        "nom": "Aligatueur",
+        "types": ["Eau"],
+        "pv": 85,
+        "atk": 105,
+        "def": 100,
+        "level": 20,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "attaques": [
+          {"nom": "Pistolet a Eau", "puissance": 40},
+          {"nom": "Hydrocanon ", "puissance": 50}
+        ]
+      },
+      {
+        "id": 10,
+        "image": "10.png",
+        "nom": "Polichombr",
+        "types": ["Spectre"],
+        "pv": 44,
+        "atk": 75,
+        "def": 35,
+        "level": 5,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "evolution": {"level": 10, "to": "Branette"},
+        "attaques": [
+          {"nom": "Balle Ombre", "puissance": 40},
+          {"nom": "Griffe Ombre", "puissance": 50}
+        ]
+      },
+      {
+        "id": 11,
+        "image": "11.png",
+        "nom": "Branette",
+        "types": ["Spectre"],
+        "pv": 64,
+        "atk": 115,
+        "def": 65,
+        "level": 10,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "attaques": [
+          {"nom": "Balle Ombre", "puissance": 60},
+          {"nom": "Griffe Ombre", "puissance": 70}
+        ]
+      },
+      {
+        "id": 12,
+        "image": "12.png",
+        "nom": "Viskuse",
+        "types": ["Eau", "Spectre"],
+        "pv": 55,
+        "atk": 40,
+        "def": 60,
+        "level": 5,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,      
+        "evolution": {"level": 10, "to": "Moyade"},
+        "attaques": [
+          {"nom": "Balle Ombre", "puissance": 60},
+          {"nom": "Pistolet a Eau", "puissance": 40}
+        ]
+      },
+      {
+        "id": 13,
+        "image": "13.png",
+        "nom": "Moyade",
+        "types": ["Eau", "Spectre"],
+        "pv": 100,
+        "atk": 70,
+        "def": 85,
+        "level": 10,
+        "xp_actuel": 0,
+        "xp_prochain_level": 100,
+        "xp_gagne": 50,
+        "attaques": [
+          {"nom": "Balle Ombre", "puissance": 60},
+          {"nom": "Pistolet a Eau", "puissance": 40}
+        ]
+      }
+    ]
+  }
