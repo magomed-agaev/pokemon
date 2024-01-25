@@ -1,0 +1,147 @@
+{
+    "pokedex": [
+      {
+        "id": 1,
+        "image": "1.png",
+        "Name": "Bulbasaur",
+        "types": ["Grass", "Poison"],
+        "Move": [
+          {"nom": "tackle"},
+          {"nom": "take-down"},
+          {"nom": "razor-leaf"},
+          {"nom": "double-edge"}
+        ]
+      },
+      {
+        "id": 2,
+        "image": "2.png",
+        "Name": "Charmander",
+        "types": ["Fire"],
+        "Move": [
+          {"nom": "scratch"},
+          {"nom": "ember"},
+          {"nom": "slash"},
+          {"nom": "fire-fang"}
+        ]
+      },
+      {
+        "id": 3,
+        "image": "3.png",
+        "Name": "Squirtle",
+        "types": ["Water"],
+        "Move": [
+          {"nom": "tackle"},
+          {"nom": "aqua-tale"},
+          {"nom": "water-gun"},
+          {"nom": "bubble"}
+        ]
+      },
+      {
+        "id": 4,
+        "image": "4.png",
+        "Name": "Psyduck",
+        "types": ["Water"],
+
+        "Move": [
+          {"nom": "confusion"},
+          {"nom": "water-pulse"},
+          {"nom": "fury-swipes"},
+          {"nom": "scratch"}
+        ]
+      },
+      {
+        "id": 5,
+        "image": "5.png",
+        "Name": "Pikachu",
+        "types": ["Electric"],   
+        "Move": [
+          {"nom": "thunder-shock"},
+          {"nom": "quick-attack"},
+          {"nom": "thunderbolt"},
+          {"nom": "feint"}
+        ]
+      },
+      {
+        "id": 6,
+        "image": "6.png",
+        "Name": "Jigglypuff",
+        "types": ["Basic"],
+        "Move": [
+          {"nom": "pound"},
+          {"nom": "double-slap"},
+          {"nom": "body-slam"},
+          {"nom": "rollout"}
+        ]
+      },
+      {
+        "id": 7,
+        "image": "7.png",
+        "Name": "Chikorita",
+        "types": ["Grass"],
+        "Move": [
+          {"nom": "tackle"},
+          {"nom": "razor-leaf"},
+          {"nom": "magical-leaf"}
+        ]
+      },
+      {
+        "id": 8,
+        "image": "8.png",
+        "Name": "Shuppet",
+        "types": ["Ghost"],
+        "Move": [
+          {"nom": "feint-attack"},
+          {"nom": "knock-off"},
+          {"nom": "shadow-sneak"}
+        ]
+      },
+      {
+        "id": 9,
+        "image": "9.png",
+        "Name": "Cyndaquil",
+        "types": ["Fire"],
+        "Move": [
+          {"nom": "thunder-shock"},
+          {"nom": "quick-attack"},
+          {"nom": "thunderbolt"},
+          {"nom": "feint"}
+        ]
+      },
+      {
+        "id": 10,
+        "image": "10.png",
+        "Name": "Gengar",
+        "types": ["Ghost"],
+        "Move": [
+          {"nom": "lick"},
+          {"nom": "shadow-punch"},
+          {"nom": "payback"},
+          {"nom": "sucker-punch"}
+        ]
+      },
+      {
+        "id": 11,
+        "image": "11.png",
+        "Name": "Totodile",
+        "types": ["Water"],
+        "Move": [
+          {"nom": "water-gun"},
+          {"nom": "bite"},
+          {"nom": "rage"},
+          {"nom": "crunch"}
+        ]
+      },
+      {
+        "id": 12,
+        "image": "12.png",
+        "Name": "Zapdos",
+        "types": ["Electric"],
+        "Move": [
+          {"nom": "peck"},
+          {"nom": "thunder-shock"},
+          {"nom": "ancient-power"},
+          {"nom": "pluck"}
+        ]     
+      }
+    ]
+  }
