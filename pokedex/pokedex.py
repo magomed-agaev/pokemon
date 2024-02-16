@@ -28,7 +28,7 @@ bouton_suivant = pygame.Rect(600, 15, 150, 50)
 # Fonction pour dessiner les boutons et afficher quand la souris est dessus
 def dessiner_boutons(fenetre, bouton_precedent_hover, bouton_suivant_hover):
     if bouton_precedent_hover:
-        pygame.draw.rect(fenetre, (100, 100, 100, 200), bouton_precedent)
+        pygame.draw.rect(fenetre, (100, 100, 100, 200), bouton_precedent) #Dessin des fonctions bouton precedent suivant avec pygame.draw (hover =  retour ou avant fenetre)
     else:
         pygame.draw.rect(fenetre, (200, 200, 200), bouton_precedent)
 
@@ -37,7 +37,7 @@ def dessiner_boutons(fenetre, bouton_precedent_hover, bouton_suivant_hover):
     else:
         pygame.draw.rect(fenetre, (200, 200, 200), bouton_suivant)
 
-    text_precedent = font.render("Previous", True, (0, 0, 0))
+    text_precedent = font.render("Previous", True, (0, 0, 0)) #Police, taille et couleur.
     text_suivant = font.render("Next", True, (0, 0, 0))
     fenetre.blit(text_precedent, (bouton_precedent.x + 10, bouton_precedent.y + 10))
     fenetre.blit(text_suivant, (bouton_suivant.x + 20, bouton_suivant.y + 10))
@@ -46,32 +46,32 @@ def dessiner_boutons(fenetre, bouton_precedent_hover, bouton_suivant_hover):
 # Fonction pour afficher la couleur du fond selon le type
 def afficher_pokemon(fenetre, pokemon):
 
-    couleur_fond1 = couleurtype(pokemon['types'][0])
-    couleur_fond2 = couleurtype(pokemon['types'][1]) if len(pokemon['types']) > 1 else couleur_fond1
+    couleur_fond1 = couleurtype(pokemon['types'][0]) #Si le Pokemon possède 1 type 
+    couleur_fond2 = couleurtype(pokemon['types'][1]) if len(pokemon['types']) > 1 else couleur_fond1 #Si le Pokemon possède 2 types, affiche deux couleurs
 
-    fenetre.fill(couleur_fond1, (0, 0, largeur_fenetre // 2, hauteur_fenetre))
-    fenetre.fill(couleur_fond2, (largeur_fenetre // 2, 0, largeur_fenetre // 2, hauteur_fenetre))
+    fenetre.fill(couleur_fond1, (0, 0, largeur_fenetre // 2, hauteur_fenetre)) #Fait en sorte que la couleur prend tout le fond
+    fenetre.fill(couleur_fond2, (largeur_fenetre // 2, 0, largeur_fenetre // 2, hauteur_fenetre)) #Pareil mais avec les 2 couleurs
 
     image = pygame.transform.scale(pokemon["image_obj"], (300, 300))
     fenetre.blit(image, (largeur_fenetre // 2 - 150, 60))
 
 # Coordonnées taille et couleur cercle
-    cercle_centre = (largeur_fenetre // 2, 210)  
+    cercle_centre = (largeur_fenetre // 2, 210) 
     cercle_rayon = 150  
-    pygame.draw.circle(fenetre, (255, 255, 255), cercle_centre, cercle_rayon)
+    pygame.draw.circle(fenetre, (255, 255, 255), cercle_centre, cercle_rayon) #Ajoute un cercle avec blanc au centre autour du pokémon
 
-# Image du pokemo,
-    image = pygame.transform.scale(pokemon["image_obj"], (300, 300))
-    fenetre.blit(image, (largeur_fenetre // 2 - 150, 60)) 
+# Image du pokemon
+    image = pygame.transform.scale(pokemon["image_obj"], (300, 300)) #Redimensionner l'image du pokémon
+    fenetre.blit(image, (largeur_fenetre // 2 - 150, 60)) #C'est ou le pokémon va apparaître dans la fenêtre
 
-# Fiche du pokemon affiché
+# Fiche du pokemon affiché 
     stats = [
         f"Name: {pokemon['Name']}",
         f"Type: {', '.join(pokemon['types'])}",
-        f"Move: {', '.join([attaque['nom'] for attaque in pokemon['Move']])}"
+        f"Move: {', '.join([attaque['nom'] for attaque in pokemon['Move']])}" 
     ]
 
-    for i, stat in enumerate(stats):
+    for i, stat in enumerate(stats): #Boucle sur la liste stats pour utiliser l'Index pour calculer la position ou le texte sera affiché
         text = font.render(stat, True, (0, 0, 0))
         fenetre.blit(text, (50, 350 + i * 30))
 
@@ -104,7 +104,7 @@ while en_cours:
     afficher_pokemon(fenetre, data["pokedex"][index_pokemon_actuel])
 
     # Gestion des événements
-    for event in pygame.event.get():
+    for event in pygame.event.get(): #Boucle qui parcours tout les evenements 
         if event.type == pygame.QUIT:
             en_cours = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
