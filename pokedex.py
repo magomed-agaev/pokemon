@@ -25,16 +25,25 @@ font = pygame.font.Font(None, 36)
 bouton_precedent = pygame.Rect(50, 15, 150, 50)
 bouton_suivant = pygame.Rect(600, 15, 150, 50)  
 
-# Fonction pour dessiner les boutons
-def dessiner_boutons(fenetre):
-    pygame.draw.rect(fenetre, (200, 200, 200), bouton_precedent)
-    pygame.draw.rect(fenetre, (200, 200, 200), bouton_suivant)  
-    text_precedent = font.render("Précédent", True, (0, 0, 0))
-    text_suivant = font.render("Suivant", True, (0, 0, 0))
+# Fonction pour dessiner les boutons et afficher quand la souris est dessus
+def dessiner_boutons(fenetre, bouton_precedent_hover, bouton_suivant_hover):
+    if bouton_precedent_hover:
+        pygame.draw.rect(fenetre, (100, 100, 100, 200), bouton_precedent)
+    else:
+        pygame.draw.rect(fenetre, (200, 200, 200), bouton_precedent)
+
+    if bouton_suivant_hover:
+        pygame.draw.rect(fenetre, (100, 100, 100, 200), bouton_suivant)
+    else:
+        pygame.draw.rect(fenetre, (200, 200, 200), bouton_suivant)
+
+    text_precedent = font.render("Previous", True, (0, 0, 0))
+    text_suivant = font.render("Next", True, (0, 0, 0))
     fenetre.blit(text_precedent, (bouton_precedent.x + 10, bouton_precedent.y + 10))
     fenetre.blit(text_suivant, (bouton_suivant.x + 20, bouton_suivant.y + 10))
+    
 
-# Fonction pour afficher les stats du Pokémon
+# Fonction pour afficher la couleur du fond selon le type
 def afficher_pokemon(fenetre, pokemon):
 
     couleur_fond1 = couleurtype(pokemon['types'][0])
@@ -51,18 +60,15 @@ def afficher_pokemon(fenetre, pokemon):
     cercle_rayon = 150  
     pygame.draw.circle(fenetre, (255, 255, 255), cercle_centre, cercle_rayon)
 
-# Image du Pokémon
+# Image du pokemo,
     image = pygame.transform.scale(pokemon["image_obj"], (300, 300))
-    fenetre.blit(image, (largeur_fenetre // 2 - 150, 60))  # Centrer l'image
+    fenetre.blit(image, (largeur_fenetre // 2 - 150, 60)) 
 
+# Fiche du pokemon affiché
     stats = [
-        f"Nom: {pokemon['nom']}",
+        f"Name: {pokemon['Name']}",
         f"Type: {', '.join(pokemon['types'])}",
-        f"PV: {pokemon['pv']}",
-        f"Attaque: {pokemon['atk']}",
-        f"Défense: {pokemon['def']}",
-        f"Expérience: {pokemon['exp']}",
-        f"Attaques: {', '.join([attaque['nom'] for attaque in pokemon['attaques']])}"
+        f"Move: {', '.join([attaque['nom'] for attaque in pokemon['Move']])}"
     ]
 
     for i, stat in enumerate(stats):
@@ -70,61 +76,62 @@ def afficher_pokemon(fenetre, pokemon):
         fenetre.blit(text, (50, 350 + i * 30))
 
 
-# Fonction pour Couleures du BG
+# Fonction qui attribue une couleur a chaque type
 def couleurtype(type_pokemon):
     couleurs_types = {
-        "Eau": (0, 105, 148),
-        "Feu": (205, 34, 0),
-        "Plante": (0, 128, 0),
-        "Spectre": (75, 0, 130),
+        "Water": (0, 105, 148),
+        "Fire": (205, 34, 0),
+        "Grass": (0, 128, 0),
+        "Ghost": (75, 0, 130),
+        "Basic": (128, 128, 128), 
+        "Electric": (255, 215, 0),
+        "Poison": (128, 0, 128), 
         }
     return couleurs_types.get(type_pokemon, (255, 255, 255))  
 
-    # Surfaces de textes des statistiques
-    stats = [
-        f"Nom: {pokemon['nom']}",
-        f"Type: {', '.join(pokemon['types'])}",
-        f"PV: {pokemon['pv']}",
-        f"Attaque: {pokemon['atk']}",
-        f"Défense: {pokemon['def']}",
-        f"Expérience: {pokemon['exp']}",
-        f"Attaques: {', '.join([attaque['nom'] for attaque in pokemon['attaques']])}"
-    ]
 
-    for i, stat in enumerate(stats):
-        text = font.render(stat, True, (0, 0, 0)) 
-        fenetre.blit(text, (50, 350 + i * 30))
-
-# Index du Pokémon actuellement affiché
+# Index du pokemon actuellement affiché
 index_pokemon_actuel = 0
 
 # Boucle 
 en_cours = True
+bouton_precedent_hover = False
+bouton_suivant_hover = False
 while en_cours:
 
     fenetre.fill((255, 255, 255))# Effacer l'écran
 
-    afficher_pokemon(fenetre, data["pokedex"][index_pokemon_actuel])# Affichage du Pokémon actuel
-
-    dessiner_boutons(fenetre) # Dessiner les boutons
+    afficher_pokemon(fenetre, data["pokedex"][index_pokemon_actuel])
 
     # Gestion des événements
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             en_cours = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:  # Clic gauche
+            if event.button == 1: # Clic gauche
                 if bouton_precedent.collidepoint(event.pos):
                     index_pokemon_actuel = (index_pokemon_actuel - 1) % len(data["pokedex"])
                 elif bouton_suivant.collidepoint(event.pos):
                     index_pokemon_actuel = (index_pokemon_actuel + 1) % len(data["pokedex"])
+        elif event.type == pygame.MOUSEMOTION:
+            bouton_precedent_hover = bouton_precedent.collidepoint(event.pos)
+            bouton_suivant_hover = bouton_suivant.collidepoint(event.pos)
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 index_pokemon_actuel = (index_pokemon_actuel - 1) % len(data["pokedex"])
             elif event.key == pygame.K_RIGHT:
                 index_pokemon_actuel = (index_pokemon_actuel + 1) % len(data["pokedex"])
 
-    pygame.display.flip()    # Mise à jour de l'affichage
+    dessiner_boutons(fenetre, bouton_precedent_hover, bouton_suivant_hover) 
+
+
+# Chargement de l'image pokedex
+    image = pygame.image.load('pokedex.png')
+    image = pygame.transform.scale(image, (200, 100))
+    position_image = (largeur_fenetre // 19, hauteur_fenetre - 510)
+    fenetre.blit(image, position_image)
+
+    pygame.display.update() # Mettre à jour l'affichage
 
 pygame.quit()
 sys.exit()
