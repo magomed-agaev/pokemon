@@ -105,22 +105,22 @@ while en_cours:
 
     # Gestion des événements
     for event in pygame.event.get(): #Boucle qui parcours tout les evenements 
-        if event.type == pygame.QUIT:
-            en_cours = False
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1: # Clic gauche
-                if bouton_precedent.collidepoint(event.pos):
-                    index_pokemon_actuel = (index_pokemon_actuel - 1) % len(data["pokedex"])
-                elif bouton_suivant.collidepoint(event.pos):
-                    index_pokemon_actuel = (index_pokemon_actuel + 1) % len(data["pokedex"])
-        elif event.type == pygame.MOUSEMOTION:
-            bouton_precedent_hover = bouton_precedent.collidepoint(event.pos)
-            bouton_suivant_hover = bouton_suivant.collidepoint(event.pos)
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                index_pokemon_actuel = (index_pokemon_actuel - 1) % len(data["pokedex"])
-            elif event.key == pygame.K_RIGHT:
-                index_pokemon_actuel = (index_pokemon_actuel + 1) % len(data["pokedex"])
+        if event.type == pygame.QUIT: #Verifie si l'utilisateur a fermé la fenêtre 
+            en_cours = False #Si c'est le cas ferme la boucle et la fenêtre
+        elif event.type == pygame.MOUSEBUTTONDOWN: #Verifie si l'utilisateur a utilisé un clic souris (MOUSEBUTTON)
+            if event.button == 1: #1 = le bouton gauche de la souris
+                if bouton_precedent.collidepoint(event.pos): # Cette condition vérifie si le point de la souris avec e.p est à l'intérieur du rectangle défini par b.p. Si c'est le cas l'utilisateur a cliqué sur le bouton Précédent.
+                    index_pokemon_actuel = (index_pokemon_actuel - 1) % len(data["pokedex"]) #précedente page du pokedex
+                elif bouton_suivant.collidepoint(event.pos): #Sinon Bouton suivant.
+                    index_pokemon_actuel = (index_pokemon_actuel + 1) % len(data["pokedex"]) #prochaine page du pokedex
+        elif event.type == pygame.MOUSEMOTION: #Verifie que la souris a été déplacé
+            bouton_precedent_hover = bouton_precedent.collidepoint(event.pos) #indique si la souris est sur le bouton precedent
+            bouton_suivant_hover = bouton_suivant.collidepoint(event.pos) #suivant
+        elif event.type == pygame.KEYDOWN: #verifie si une  des touches flèches a été touché 
+            if event.key == pygame.K_LEFT: #verifie si la touche GAUCHE
+                index_pokemon_actuel = (index_pokemon_actuel - 1) % len(data["pokedex"]) #page preecedente
+            elif event.key == pygame.K_RIGHT: #DROITE
+                index_pokemon_actuel = (index_pokemon_actuel + 1) % len(data["pokedex"]) #page suivante
 
     dessiner_boutons(fenetre, bouton_precedent_hover, bouton_suivant_hover) 
 
